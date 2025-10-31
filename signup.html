@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>สมัครสมาชิก | ThaiExplorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <h1 class="logo">ThaiExplorer</h1>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="index.html#dashboard">แดชบอร์ด</a>
+        <a href="signup.html" class="btn btn-primary">สมัครสมาชิก</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h2>ฟอร์มสมัครสมาชิก</h2>
+    <p class="muted">ตัวอย่างฟอร์ม (ฝั่งไคลเอนต์) — กดสมัครเพื่อทดสอบการบันทึกผู้ใช้ลงใน localStorage</p>
+
+    <form id="signupForm" class="form-card" novalidate>
+      <div class="form-row">
+        <label for="fullName">ชื่อ-นามสกุล</label>
+        <input id="fullName" name="fullName" type="text" required placeholder="เช่น วรรณชนก ใจดี" />
+        <small class="error" data-error-for="fullName"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="email">อีเมล</label>
+        <input id="email" name="email" type="email" required placeholder="name@example.com" />
+        <small class="error" data-error-for="email"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="password">รหัสผ่าน</label>
+        <input id="password" name="password" type="password" minlength="6" required placeholder="อย่างน้อย 6 ตัวอักษร" />
+        <small class="error" data-error-for="password"></small>
+      </div>
+
+      <div class="form-row">
+        <label for="confirm">ยืนยันรหัสผ่าน</label>
+        <input id="confirm" name="confirm" type="password" minlength="6" required placeholder="พิมพ์รหัสผ่านอีกครั้ง" />
+        <small class="error" data-error-for="confirm"></small>
+      </div>
+
+      <button class="btn btn-primary" type="submit">สมัครสมาชิก</button>
+      <a class="btn" href="index.html">ย้อนกลับหน้าแรก</a>
+
+      <div class="success" id="successBox" hidden>
+        ✅ สมัครสมาชิกสำเร็จ! (ข้อมูลทดลองถูกบันทึกไว้ในเบราว์เซอร์เครื่องนี้)
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> ThaiExplorer — ตัวอย่างเว็บไซต์เพื่อการศึกษา</p>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="index.html#dashboard">แดชบอร์ด</a>
+        <a href="signup.html">สมัครสมาชิก</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

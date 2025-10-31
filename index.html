@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เว็บตัวอย่าง | ส่วนหัว-เนื้อหา-ส่วนท้าย + แดชบอร์ด</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <h1 class="logo">ThaiExplorer</h1>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#dashboard" class="hide-on-mobile">แดชบอร์ด</a>
+        <a href="signup.html" class="btn btn-primary">สมัครสมาชิก</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>เกี่ยวกับ... แหล่งท่องเที่ยวในประเทศไทย</h2>
+        <p>
+          เว็บไซต์ตัวอย่างนี้จัดทำเพื่อสาธิตโครงสร้างหน้าเว็บที่มี <strong>ส่วนหัว</strong>,
+          <strong>ส่วนเนื้อหา</strong> และ <strong>ส่วนท้าย</strong> พร้อมทั้งมีระบบ
+          <em>แดชบอร์ดสถิติผู้เข้าชม</em> แบบง่าย และเมนู <strong>สมัครสมาชิก</strong> บนหน้าแรก
+          โดยฟอร์มสมัครสมาชิกจะอยู่ในหน้า <code>signup.html</code> แยกต่างหาก
+        </p>
+        <p class="muted">
+          *ปรับแต่งข้อความ “เกี่ยวกับ...” ให้เป็นสิ่งที่แทนสนใจได้เลย เช่น อุทยานแห่งชาติ, เมืองท่องเที่ยว,
+          อาหารพื้นถิ่น ฯลฯ
+        </p>
+        <div class="cta">
+          <a href="signup.html" class="btn btn-primary">เริ่มต้นสมัครสมาชิก</a>
+          <a href="#dashboard" class="btn">ดูแดชบอร์ดผู้เข้าชม</a>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1548786811-c5a4c17f3ffe?q=80&w=1200&auto=format&fit=crop" alt="Thailand beach" class="hero-img" />
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>จุดเด่น</h3>
+        <ul>
+          <li>โครงสร้างเว็บชัดเจน: ส่วนหัว / เนื้อหา / ส่วนท้าย</li>
+          <li>แดชบอร์ดสถิติผู้เข้าชม (ไม่ต้องใช้เซิร์ฟเวอร์ ทดลองด้วย Browser)</li>
+          <li>เมนูสมัครสมาชิกในหน้าแรก + ฟอร์มอยู่หน้าอื่น</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>เนื้อหาเกี่ยวกับการท่องเที่ยว</h3>
+        <p>
+          ประเทศไทยเต็มไปด้วยแหล่งท่องเที่ยวทั้งธรรมชาติและวัฒนธรรม เช่น เชียงใหม่ เชียงราย
+          ภูเก็ต กระบี่ สุโขทัย และอุทยานแห่งชาติต่างๆ นักท่องเที่ยวสามารถสนุกกับกิจกรรมดำน้ำ
+          เดินป่า ชมงานเทศกาล และลิ้มรสอาหารท้องถิ่น
+        </p>
+      </article>
+      <article class="card">
+        <h3>วัตถุประสงค์ของโปรเจกต์</h3>
+        <p>ใช้เป็นแม่แบบเรียนรู้ HTML/CSS/JS และการจัดโครงสร้างหน้าเว็บ พร้อมตัวอย่างแดชบอร์ดง่ายๆ</p>
+      </article>
+    </section>
+
+    <section id="dashboard" class="dashboard">
+      <h2>แดชบอร์ดสถิติผู้เข้าชมเว็บไซต์</h2>
+      <div class="grid-3">
+        <div class="stat">
+          <div class="stat-label">จำนวนเข้าชมทั้งหมด</div>
+          <div class="stat-value" id="totalVisits">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">เข้าชมวันนี้</div>
+          <div class="stat-value" id="todayVisits">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">ผู้ใช้งานที่ลงทะเบียน (จำลอง)</div>
+          <div class="stat-value" id="registeredUsers">—</div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>สถิติ 7 วันย้อนหลัง</h3>
+        <canvas id="visitsChart" width="900" height="300" aria-label="Visits chart"></canvas>
+        <p class="muted">*ข้อมูลสาธิตจัดเก็บใน <code>localStorage</code> ของเบราว์เซอร์เครื่องนี้</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> ThaiExplorer — ตัวอย่างเว็บไซต์เพื่อการศึกษา</p>
+      <nav class="nav">
+        <a href="index.html">หน้าแรก</a>
+        <a href="#dashboard">แดชบอร์ด</a>
+        <a href="signup.html">สมัครสมาชิก</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
